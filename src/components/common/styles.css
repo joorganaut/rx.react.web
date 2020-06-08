@@ -1,0 +1,61 @@
+.activityIndicator{
+        flex-direction: column;
+        position: absolute;
+        z-index:5;
+        left: 0;
+        right: 0;
+        top: 45%;
+        bottom: 0;
+        align-items: center;
+        justify-content: center;
+        background-color: #F5FCFF88;
+        opacity: 0.5;
+}
+body {
+	background:#fff;
+}
+
+a.border.nav-link.border-light.rounded.mr-1 {
+  color: #3F729B;
+}
+
+a.border.nav-link.border-light.rounded.mr-1:hover {
+  color: #1C2331;
+}
+/* Modify brand and text color */  
+.nav { 
+    color: #3F729B; 
+} 
+.bgcolor {
+  background-color: #0c54606e !important
+  /* background-image: url('./Pharmacy/images/blue_tile.jpg') !important; */
+  /* background-repeat: repeat; */
+}
+
+.btn.btn-sm.indigo:hover{
+  color: #fff;
+}
+
+.nav-link.active{
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#categories > .col-md-4.mb-5{
+  margin-bottom: 8rem !important;
+}
+.sectionPage {
+  position: relative;
+  top: -15px;
+  margin-bottom: -125px;
+}
+
+.sectionPage::after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: url('https://mdbootstrap.com/wp-content/uploads/2016/12/big-bundle1.jpg');
+  background-position: center center;
+  background-size: cover;
+  filter: opacity(.1);
+}
