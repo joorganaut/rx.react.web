@@ -4,6 +4,7 @@ import ContextManager from './contextManager';
 import { Redirect } from 'react-router-dom';
 import Notification from './notification';
 import {theme} from './theme';
+import MiddlewareManager from '../../services/middlewareManager';
 export default class BasePageComponent extends React.Component{
     constructor(props){
         super(props);
@@ -16,6 +17,7 @@ export default class BasePageComponent extends React.Component{
             RedirectParams: {},
             User: localStorage.getItem('User'),
         };
+        this.manager = new MiddlewareManager();
         this.theme = theme;
         this.Notification = new Notification(props);
         this.notify = this.notify.bind(this);
@@ -286,4 +288,4 @@ export default class BasePageComponent extends React.Component{
         </>)
     }
 }
-BasePageComponent.contextType = ContextManager;
+BasePageComponent.contextType = ContextManager.AppContext;

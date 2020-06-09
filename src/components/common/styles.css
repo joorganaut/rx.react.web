@@ -12,7 +12,8 @@
         opacity: 0.5;
 }
 body {
-	background:#fff;
+  background:#fff;
+  font-family: Work Sans,sans-serif !important;
 }
 
 a.border.nav-link.border-light.rounded.mr-1 {

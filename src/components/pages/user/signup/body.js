@@ -179,7 +179,7 @@ class Body extends BasePageComponent{
     renderPage(){
         return(<>
             <div className="Login container-login100" style={{backgroundImage: `url(${SignupBackground})`}} >
-        <div className="p-l-55 p-r-55 p-t-80 p-b-30 col-lg-6 col-md-12 col-sm-12" style={{backgroundColor:'white'}}>
+        <div className="p-l-55 p-r-55 p-t-80 p-b-30 col-lg-6 col-md-12 col-sm-12" style={{backgroundColor:'white', borderRadius : 15}}>
                 <form onSubmit = {
                     this.handleSubmitForm
                 } class="login100-form validate-form">

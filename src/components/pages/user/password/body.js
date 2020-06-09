@@ -80,7 +80,7 @@ class Body extends BasePageComponent{
       onSubmit={this.handleSubmit} 
       className="login100-form validate-form">
       <span className="login100-form-title p-b-37">
-                    Sign In 
+                    Enter Email 
     </span>
         <div controlId="email" bsSize="medium" className="wrap-input100 validate-input m-b-20">
         <div className="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">
@@ -91,53 +91,16 @@ class Body extends BasePageComponent{
                     <span className="focus-input100"></span>
                 </div>
         </div>
-        <div controlId="password" bsSize="medium" className="wrap-input100 validate-input m-b-20">
-         
-                <div className="wrap-input100 validate-input m-b-25" data-validate="Enter password">
-                    <input className="input100" type="password" name="password" 
-                    onChange={this.handleUserInput} 
-                     value={this.state.password} 
-                    placeholder="password"></input>
-                    <span className="focus-input100"></span>
-                </div>
-        </div>
         <div className="container-login100-form-btn">
         <div className = "container-login100-form-btn" >
                 <Button type = {"submit"}
                 id = {"submit-form-button"}
-                text = {"Login"}
+                text = {"Recover"}
                 disabled = {!this.state.formValid} > 
                 </Button> 
                 </div>
-                <div className="text-center p-t-57 p-b-20">
-                    <a href="/sign-up" className="txt2 hov1">
-                        or Sign Up
-                    </a> <br />
-                    <a href="/password-recovery" className="txt2 hov1">
-                        forgot your password?
-                    </a>
+                
                 </div>
-                </div>
-               <div className="" style={styles.MainContainer}>
-               <a href='#/'>
-               <div className="row" style={styles.FacebookStyle}>
-               <div className='col-1'  style={styles.TextStyle2}> <i class="fa fa-facebook-f"></i></div>
-               <div className='col-1' style={styles.SeparatorLine}></div>
-                <div className='col-8' style={styles.TextStyle}> 
-                Login Using Facebook
-                </div>
-               </div>
-               </a>
-               <a href='#/'>
-               <div className="row" style={styles.GooglePlusStyle}>
-               <div className='col-1' style={styles.TextStyle2}> <i class="fa fa-google-plus"></i></div>
-               <div className='col-1' style={styles.SeparatorLine}></div>
-                <div className='col-8' style={styles.TextStyle}> 
-                Login Using Google +
-                </div>
-               </div>
-               </a>
-               </div>
       </form>
      
       </div>

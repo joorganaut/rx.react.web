@@ -49,7 +49,7 @@ class Footer extends Component
                         <p>
                             
                             Copyright &copy;
-                            {new Date().getFullYear()};All rights reserved | Powered
+                            {new Date().getFullYear()} | All rights reserved | Powered
                             by <a href="https://joorganautia.com" target="_blank"
                                   className="text-primary">Joorganautia&reg;</a>
                         </p>

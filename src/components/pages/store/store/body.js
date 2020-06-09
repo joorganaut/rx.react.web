@@ -4,7 +4,7 @@ import SingleStoreProductSideWidget from './singleStoreProductSideWidget';
 import SingleStoreProductMainWidget from './singleStoreProductMainWidget';
 import MiddlewareManager from '../../../../services/middlewareManager';
 import {theme} from '../../../common/theme';
-import BannerBackground from '../../../common/Pharmacy/images/blue_tile4.jpg';
+import BannerBackground from '../../../common/Pharmacy/images/blue_tile3.jpg';
 import './sidebar.css';
 import './sidebar2.css';
 class Body extends BasePageComponent{
@@ -303,10 +303,11 @@ const styles = {
         backgroundColor : theme.colors.brand,
         position: 'relative',
         backgroundImage : `url(${BannerBackground})`,
-        backgroundRepeat: 'repeat',
+        backgroundRepeat: 'no-repeat',
         backgroundSize: '100%',
-        // opacity: 0.5,
-        // filter: 'alpha(opacity=40)',
+        clip: 'rect(0, 100px, 200px, 0)',
+        opacity: 0.5,
+        filter: 'alpha(opacity=40)',
         // paddingBottom: '70px',
         paddingTop: '120px'
     },

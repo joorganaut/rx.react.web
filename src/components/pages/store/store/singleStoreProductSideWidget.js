@@ -21,7 +21,7 @@ class SingleStoreProductSideWidget extends BasePageComponent{
           <ProductDetails  
           Image = {this.state.Item.image}
           Price = {this.state.Item.Price}
-          ProductID = {this.state.Item.ProductID}
+          ProductID = {this.state.Item.ID}
           Description = {this.state.Item.Description}
           Tags = {this.state.Item.Tags}
           Quantity = {this.state.Item.Quantity}

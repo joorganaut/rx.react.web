@@ -22,7 +22,7 @@ class SingleStoreProductMainWidget extends BasePageComponent{
           <ProductDetails  
           Image = {this.state.Item.image}
           Price = {this.state.Item.Price}
-          ProductID = {this.state.Item.ProductID}
+          ProductID = {this.state.Item.ID}
           Description = {this.state.Item.Description}
           Tags = {this.state.Item.Tags}
           Quantity = {this.state.Item.Quantity}
@@ -77,8 +77,8 @@ class SingleStoreProductMainWidget extends BasePageComponent{
             <div class="product-grid">
       <div class="product-grid__image">
          <a class="image-wrap" href="#/"  onClick={()=>{this.setState({Show : !this.state.Show})}} style={{backgroundColor : '#f6f6f6'}}>
-         <img src={this.state.Item.image} class="img-fluid" alt="Lorem ipsum perfumes one" style={{width: '270px', height: '360px'}}/>
-         <img src={this.state.Item.image} class="img-fluid" alt="Lorem ipsum perfumes one" style={{height: '360px', width: '270px'}}/>
+         <img src={this.state.Item.image} class="img-fluid" alt="Lorem ipsum perfumes one" style={{width: '170px', height: '260px'}}/>
+         <img src={this.state.Item.image} class="img-fluid" alt="Lorem ipsum perfumes one" style={{height: '260px', width: '170px'}}/>
          </a>
          <div class="product-grid__floating-badges">
          {this.state.Item.Discounted ? <span class="hot">-{this.renderDiscountPercentage()}%</span> : ''}
@@ -110,7 +110,7 @@ class SingleStoreProductMainWidget extends BasePageComponent{
       </div>
       <div class="product-grid__content">
          <div class="title">
-            <h3><a href="/shop/product-basic/lorem-ipsum-perfumes-one">{this.state.Item.Name}</a></h3>
+            <h3><a href="#/">{this.state.Item.Name}</a></h3>
             <button  onClick={()=>{this.setState({Show : !this.state.Show})}}>Add to cart</button>
          </div>
          <div class="price">{this.renderPrice(this.state.Item)}</div>
@@ -119,8 +119,8 @@ class SingleStoreProductMainWidget extends BasePageComponent{
 <div class="product-list">
       <div class="product-list__image">
          <a class="image-wrap" href='#/'  onClick={()=>{this.setState({Show : !this.state.Show})}}>
-         <img src={this.state.Item.image} class="img-fluid" alt="Lorem ipsum perfumes one"/>
-         <img src={this.state.Item.image} class="img-fluid" alt="Lorem ipsum perfumes one"/>
+         <img style={{width: '170px', height: '260px'}} src={this.state.Item.image} class="img-fluid" alt="Lorem ipsum perfumes one"/>
+         <img style={{width: '170px', height: '260px'}} src={this.state.Item.image} class="img-fluid" alt="Lorem ipsum perfumes one"/>
          </a>
          <div class="product-list__floating-badges">
          {this.state.Item.Discounted ? <span class="hot">-{this.renderDiscountPercentage()}%</span> : ''}
@@ -152,11 +152,11 @@ class SingleStoreProductMainWidget extends BasePageComponent{
       </div>
       <div class="product-list__content">
          <div class="title">
-            <h3><a href="/shop/product-basic/lorem-ipsum-perfumes-one">{this.state.Item.Name}</a></h3>
+            <h3><a href="#/">{this.state.Item.Name}</a></h3>
          </div>
          <div class="price">{this.renderPrice(this.state.Item)}</div>
          <div class="short-description text-justify text-wrap">{this.state.Item.Description}</div>
-         <div class="add-to-cart"><button  onClick={()=>{this.setState({Show : !this.state.Show})}} class="lezada-button lezada-button--medium">Add to cart</button></div>
+         <div class="add-to-cart"><button style={{backgroundColor : theme.colors.brand, border : 'none'}} onClick={()=>{this.setState({Show : !this.state.Show})}} class="lezada-button lezada-button--medium">Add to cart</button></div>
       </div>
    </div>
 

@@ -8,8 +8,9 @@ class Body extends BasePageComponent{
         
     }
     
-    componentDidMount(){
-        this.setState({IsLoading : true});
+    async componentDidMount(){
+        await this.setState({IsLoading : true});
+
     }
     
     renderPage(){

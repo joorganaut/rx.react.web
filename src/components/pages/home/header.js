@@ -1,6 +1,9 @@
 import React from 'react';
 import BasePageComponent from '../../common/basePageComponent';
+import CartDrawerItem from '../store/cart/cartDrawerItem';
 import {theme} from '../../common/theme';
+import '../store/store/sidebar.css';
+import '../store/store/sidebar2.css';
 import logo from '../../../assets/bg_rx3.0.jpg';
 import {AppContext} from '../../common/contextManager';
 
@@ -25,7 +28,8 @@ class Header extends BasePageComponent{
         super(props);
         this.state={
             collapseID : '',
-            search : ''
+            search : '',
+            Show : false,
         }
         this.toggleCollapse = this.toggleCollapse.bind(this);
         this.logout = this.logout.bind(this);
@@ -35,7 +39,10 @@ class Header extends BasePageComponent{
     this.setState(prevState => ({
       collapseID: prevState.collapseID !== collapseID ? collapseID : ''
     }));
-
+componentDidMount(){
+  let context = this.context;
+  let cartCount = context.state.CartItemsCount;
+}
   closeCollapse = collID => () => {
     const { collapseID } = this.state;
     window.scrollTo(0, 0);
@@ -68,16 +75,6 @@ class Header extends BasePageComponent{
                 </MDBDropdownMenu>
               </MDBDropdown>
                 </MDBNavItem>
-               
-                <MDBNavItem>
-                  <MDBNavLink
-                    onClick={()=>{this.closeCollapse('mainNavbarCollapse');}}
-                    to='/cart'
-                  >
-                   <strong  style={{fontSize : 25, color : theme.colors.white}}><MDBIcon icon="cart-arrow-down"/></strong>
-                   <span class="badge badge-pill red" style={style.super}>{value.state.CartItemsCount}</span>
-                  </MDBNavLink>
-                </MDBNavItem>  
                 </>)}</AppContext.Consumer>
                             
       </>);
@@ -105,6 +102,66 @@ class Header extends BasePageComponent{
     event.preventDefault();
     await this.setState({IsLoading : true, Redirect : true, RedirectPath : '/store', search : ''});
 
+  }
+  renderCartItems(){
+    if(this.context.state.CartItemsCount <= 0){
+        return(<>No items found in cart</>)
+    }else{
+      return(<>
+        <div class="cart-product-wrapper">
+   <div class="cart-product-container">
+      <div class="rcs-custom-scroll ">
+         <div class="rcs-outer-container">
+            <div class="rcs-inner-container" style={{marginRight: '-17px'}}>
+               <div style={{overflowY: 'visible', marginRight: '0px'}}>
+                  {this.context.state.Cart.map((e, i)=>(
+                    <CartDrawerItem Item={e}/>
+                  ))}
+                  </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <p class="cart-subtotal"><span class="subtotal-title">Subtotal:</span>
+   <span class="subtotal-amount"  style={{left : 100, color : theme.colors.money, fontWeight : 800, fontSize : 15}}>
+   {this.renderNaira(parseFloat(this.context.state.TotalCost).toFixed(2))}</span></p>
+   <div class="cart-buttons"><a  style={{backgroundColor : theme.colors.brand, border : 'none'}} href="/cart">view cart</a>
+   <a  style={{backgroundColor : theme.colors.brand, border : 'none'}} href="/checkout">checkout</a></div>
+   <p class="free-shipping-text fs-16 text-center" style={{color : theme.colors.cart}}>Free Delivery on All Orders Over {this.renderNaira(2000)}!</p>
+</div>
+      </>)
+    }
+  }
+  renderNaira=(alpha)=>{
+    return(<>
+        <del style={{textDecorationStyle : 'double', textDecoration : 'line-through'}}>N</del>{alpha}
+    </>)
+}
+  showCartDrawer = ()=>{
+    if(this.state.Show)
+    {
+    return(<>  
+    <div> 
+    <div class={'cart-overlay active' }>
+   <div class="cart-overlay__close"></div>
+   <div class="cart-overlay__content">
+      <button class="cart-overlay__close-icon" onClick={()=>{this.setState({Show : !this.state.Show});}}>
+         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path d="M278.6 256l68.2-68.2c6.2-6.2 6.2-16.4 0-22.6-6.2-6.2-16.4-6.2-22.6 0L256 233.4l-68.2-68.2c-6.2-6.2-16.4-6.2-22.6 0-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3l68.2 68.2-68.2 68.2c-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3 6.2 6.2 16.4 6.2 22.6 0l68.2-68.2 68.2 68.2c6.2 6.2 16.4 6.2 22.6 0 6.2-6.2 6.2-16.4 0-22.6L278.6 256z"></path>
+         </svg>
+      </button>
+      <div class="cart-overlay__content-container">
+         <h3 class="cart-title">Cart</h3>
+         {this.renderCartItems()}
+      </div>
+   </div>
+</div>      
+    </div>
+    </>)
+    }
+    else{
+      return(<></>)
+    }
   }
     render(){
       const overlay = (
@@ -187,6 +244,21 @@ class Header extends BasePageComponent{
                 </MDBNavbarNav>
               <MDBNavbarNav right>
               {this.renderMenu()}
+              <AppContext.Consumer>
+              {
+                value=>(<>
+              <MDBNavItem>
+                  <MDBNavLink
+                    onClick={()=>{this.closeCollapse('mainNavbarCollapse');}}
+                    to='#/'
+                  >
+                   <strong className='cart-overlay-trigger' style={{fontSize : 25, color : theme.colors.white}}>
+                   <MDBIcon icon="cart-arrow-down" 
+                   onClick={()=> this.setState({Show : true})}                     
+                   /></strong>
+                   <span class="badge badge-pill red" style={style.super}>{value.state.CartItemsCount}</span>
+                  </MDBNavLink>
+                </MDBNavItem>   </>)}</AppContext.Consumer>
             <MDBNavItem>
               <MDBFormInline waves>
                 <form className="md-form my-0" action='/store'>
@@ -206,6 +278,7 @@ class Header extends BasePageComponent{
           <main style={{ marginTop: '4rem' }}>
             {/* <Routes /> */}
           </main>
+         {this.showCartDrawer()}
         </>)
     }
 }
@@ -216,4 +289,5 @@ const style = {
     right: '0px',
   }
 }
+Header.contextType = AppContext;
 export default Header;

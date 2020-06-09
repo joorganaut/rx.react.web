@@ -150,7 +150,7 @@ class ProductDetails extends BasePageComponent{
         </div>
         <CartButton Title="Add" 
                 Add={true}
-                Price={this.state.Price}
+                Price={this.state.Discounted ? this.state.DiscountedPrice : this.state.Price}
                 ProductName={this.state.Name}
                 Quantity={this.state[this.state.ProductID+'_count']}
                 ProductID={this.state.ProductID}/>
