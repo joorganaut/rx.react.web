@@ -1,15 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import './components/common/styles.css';
-// import './assets/styles/base.scss'
-import 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './components/common/Pharmacy/css/aos.css';
-import './components/common/Pharmacy/css/style.css';
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "bootstrap-css-only/css/bootstrap.min.css";
-import "mdbreact/dist/css/mdb.css";
+import 'react-bootstrap';
+import './theme/pharma';
 import ContextManager from './components/common/contextManager';
 import App from './App';
 import { ToastContainer } from 'react-toastify';

@@ -11,6 +11,7 @@ export const theme = {
     white : 'white',
     user : 'red',
     hint : 'yellow',
-    money : '#85bb65'
+    money : '#85bb65',
+    cell : '#cceefa',
   },
 };

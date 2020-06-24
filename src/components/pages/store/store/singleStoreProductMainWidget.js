@@ -76,12 +76,12 @@ class SingleStoreProductMainWidget extends BasePageComponent{
             <div class="space-mb--50 col-lg-3 col-md-6">
             <div class="product-grid">
       <div class="product-grid__image">
-         <a class="image-wrap" href="#/"  onClick={()=>{this.setState({Show : !this.state.Show})}} style={{backgroundColor : '#f6f6f6'}}>
-         <img src={this.state.Item.image} class="img-fluid" alt="Lorem ipsum perfumes one" style={{width: '170px', height: '260px'}}/>
-         <img src={this.state.Item.image} class="img-fluid" alt="Lorem ipsum perfumes one" style={{height: '260px', width: '170px'}}/>
+         <a class="image-wrap" href="#/"  onClick={()=>{this.setState({Show : !this.state.Show})}} style={{backgroundColor : 'none'}}>
+         <img src={this.state.Item.image} class="img-fluid" alt="Lorem ipsum perfumes one" style={{width: '170px', height: '170px'}}/>
+         <img src={this.state.Item.image} class="img-fluid" alt="Lorem ipsum perfumes one" style={{height: '170px', width: '170px'}}/>
          </a>
          <div class="product-grid__floating-badges">
-         {this.state.Item.Discounted ? <span class="hot">-{this.renderDiscountPercentage()}%</span> : ''}
+         {this.state.Item.Discounted ? <span class="onsale">-{this.renderDiscountPercentage()}%</span> : ''}
          </div>
          <div class="product-grid__floating-icons">
             <div class="" data-tooltipped="" aria-describedby="tippy-tooltip-379" data-original-title="Add to wishlist" style={{display: 'inline'}}>
@@ -119,11 +119,11 @@ class SingleStoreProductMainWidget extends BasePageComponent{
 <div class="product-list">
       <div class="product-list__image">
          <a class="image-wrap" href='#/'  onClick={()=>{this.setState({Show : !this.state.Show})}}>
-         <img style={{width: '170px', height: '260px'}} src={this.state.Item.image} class="img-fluid" alt="Lorem ipsum perfumes one"/>
-         <img style={{width: '170px', height: '260px'}} src={this.state.Item.image} class="img-fluid" alt="Lorem ipsum perfumes one"/>
+         <img style={{width: '260px', height: '260px'}} src={this.state.Item.image} class="img-fluid" alt="Lorem ipsum perfumes one"/>
+         <img style={{width: '260px', height: '260px'}} src={this.state.Item.image} class="img-fluid" alt="Lorem ipsum perfumes one"/>
          </a>
          <div class="product-list__floating-badges">
-         {this.state.Item.Discounted ? <span class="hot">-{this.renderDiscountPercentage()}%</span> : ''}
+         {this.state.Item.Discounted ? <span class="onsale">-{this.renderDiscountPercentage()}%</span> : ''}
          </div>
          <div class="product-list__floating-icons">
             <div class="" data-tooltipped="" aria-describedby="tippy-tooltip-382" data-original-title="Add to wishlist" style={{display: 'inline'}}>

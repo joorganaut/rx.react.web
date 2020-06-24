@@ -4,6 +4,7 @@ import MiddlewareManager from '../../../services/middlewareManager';
 import DashboardProduct from '../product/dashboardProduct';
 // import background from '../../common/Pharmacy/images/hero_1.jpg';
 import background from '../../common/Pharmacy/images/bg_1.jpg';
+// import background from '../../../assets/flu_banner.jpg';//'../../../common/Pharmacy/images/blue_tile3.jpg';
 import bg2 from '../../common/Pharmacy/images/bg_2.jpg';//'./Pharmacy/images/bg_2.jpg';
 import bg1 from '../../common/Pharmacy/images/bg_1.jpg';
 import person1 from '../../common/Pharmacy/images/person_1.jpg';
@@ -11,7 +12,7 @@ import person2 from '../../common/Pharmacy/images/person_2.jpg';
 import person3 from '../../common/Pharmacy/images/person_3.jpg';
 import person4 from '../../common/Pharmacy/images/person_4.jpg';
 import { theme } from '../../common/theme';
-
+// import '../../../theme/joorganautia'
 
 class Body extends BasePageComponent{
     constructor(props){
@@ -73,7 +74,16 @@ render(){
       
     return(
         <div>
-        <div className="site-blocks-cover" style={{backgroundImage: `url('${background}')`, backgroundRepeat: 'repeat'}}>
+       
+        <div className="site-blocks-cover" style={{backgroundImage: `url('${background}')`,
+         height: '50px !important',
+         backgroundRepeat: 'no-repeat'}}>
+        <div class="section-header text-center">
+        <h1 class="snize-search-results-page-title" style={{
+            fontSize : '2em',
+            fontWeight : 300
+        }}>FREE SHIPPING ON ALL ORDERS! NO MINIMUM!</h1>
+        </div>
     <div className="container">
         <div className="row">
             <div className="col-lg-7 mx-auto order-lg-2 align-self-center">
@@ -93,7 +103,7 @@ render(){
     <div className="container">
         <div className="row align-items-stretch section-overlap">
             <div className="col-md-6 col-lg-4 mb-4 mb-lg-0">
-                <div className="banner-wrap bg-primary h-100">
+                <div className="banner-wrap h-100" style={{borderRadius : 20, backgroundColor : theme.colors.brand}}>
                     <a href="#" className="h-100">
                         <h5>Free <br /> Delivery</h5>
                         <p>
@@ -104,7 +114,7 @@ render(){
                 </div>
             </div>
             <div className="col-md-6 col-lg-4 mb-4 mb-lg-0">
-                <div className="banner-wrap h-100">
+                <div className="banner-wrap h-100" style={{borderRadius : 20, backgroundColor : theme.colors.brand}}>
                     <a href="#" className="h-100">
                         <h5>Season <br /> Sale 50% Off</h5>
                         <p>
@@ -115,7 +125,7 @@ render(){
                 </div>
             </div>
             <div className="col-md-6 col-lg-4 mb-4 mb-lg-0">
-                <div className="banner-wrap bg-warning h-100">
+                <div className="banner-wrap h-100" style={{borderRadius : 20, backgroundColor : theme.colors.brand}}>
                     <a href="#" className="h-100">
                         <h5>Consultation <br /> Or Advise</h5>
                         <p>
@@ -223,7 +233,7 @@ render(){
     </div>
 </div>
 
-<div className="site-section bg-secondary bg-image" style={{backgroundImage:`url(${bg2})`}}>
+<div className="site-section" style={{backgroundColor : theme.colors.white}}>
     <div className="container">
         <div className="row align-items-stretch">
             <div className="col-lg-6 mb-5 mb-lg-0">

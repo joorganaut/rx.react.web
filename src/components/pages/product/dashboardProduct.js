@@ -89,7 +89,7 @@ class DashboardProduct extends BasePageComponent{
              <div className="col-sm-6 col-lg-4 text-center item mb-4">
                 {this.renderDiscountedTag()}
                 <a onClick={()=>{this.setState({Show : !this.state.Show})}} href="#/"> 
-                <img  src={this.state.Image} alt='' style={{height : 250, width : 200}}/>
+                <img  src={this.state.Image} alt='' style={{height : 200, width : 200}}/>
                 </a>
                 <h3 className="text-dark"><a href="#/">{this.state.Name}</a></h3>
                 <p className="price" style={{left : 100, color : theme.colors.money, fontWeight : 800, fontSize : 15}}>{this.renderPrice()}</p>

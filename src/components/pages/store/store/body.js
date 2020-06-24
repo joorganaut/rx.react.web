@@ -4,9 +4,10 @@ import SingleStoreProductSideWidget from './singleStoreProductSideWidget';
 import SingleStoreProductMainWidget from './singleStoreProductMainWidget';
 import MiddlewareManager from '../../../../services/middlewareManager';
 import {theme} from '../../../common/theme';
-import BannerBackground from '../../../common/Pharmacy/images/blue_tile3.jpg';
+import BannerBackground from '../../../../assets/flu_banner.jpg';//'../../../common/Pharmacy/images/blue_tile3.jpg';
 import './sidebar.css';
 import './sidebar2.css';
+// import '../../../../theme/joorganautia';
 class Body extends BasePageComponent{
     constructor(props){
         super(props)
@@ -147,7 +148,7 @@ class Body extends BasePageComponent{
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <h1 className="breadcrumb_title" style={styles.bannerText}>Effective Medicine, New Medicine Everyday</h1>
+                        {/* <h1 className="breadcrumb_title" style={styles.bannerText}>Effective Medicine, New Medicine Everyday</h1> */}
                         <ul class="breadcrumb__list" style={{color : theme.colors.primary, fontWeight : 400}}>
                         <li  style={{color : theme.colors.primary, fontWeight : 400}}><a href='/store'>Home</a></li>
                         <li  style={{color : theme.colors.primary, fontWeight : 400}}><a href={'/store/'+this.props.query}>{this.props.query}</a></li>
@@ -162,7 +163,7 @@ class Body extends BasePageComponent{
       <div class="align-items-center row">
          <div class="text-center text-md-left col-md-5">
          {(this.state.pagingParams !== undefined && this.state.pagingParams.totalItemsCount > 0)
-         ?  'Showing '+ (this.state.pagingParams.totalItemsCount < this.state.pagingParams.pageSize ? this.state.pagingParams.totalItemsCount : this.state.pagingParams.pageSize) 
+         ?  'Showing '+ (this.state.Items.length < this.state.pagingParams.pageSize ? this.state.pagingParams.totalItemsCount : this.state.pagingParams.pageSize) 
          +' of ' +this.state.pagingParams.totalItemsCount +' items'
          : 'no items'}
          </div>
@@ -272,16 +273,20 @@ class Body extends BasePageComponent{
                     ))}
                     </div>
                 </div>
-                <div class="pro-pagination-style">
-                <ul class="mb-0 mt-0">
+                {/* <nav aria-label="Page navigation example"> */}
+                <div class="">
+                <ul class="pagination">
                 {[...Array(this.state.NumberOfPages)].map((e, i) => 
-                <li class="page-item active"><button onClick={this.handlePageChange} value={i+1} class="page-link">{i+1}</button></li>
+                <li class="page-item active">
+                <button onClick={this.handlePageChange} value={i+1} class="page-link">{i+1}</button>
+                </li>
                 )}
                     {/* <li class="page-item active"><button class="page-link">1</button></li>
                     <li class="page-item active"><button class="page-link">2</button></li>
                     <li class="page-item active"><button class="page-link">3</button></li> */}
                 </ul>
                 </div>
+                {/* </nav> */}
                 </div>
                 </div>
             </div>
@@ -306,8 +311,8 @@ const styles = {
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100%',
         clip: 'rect(0, 100px, 200px, 0)',
-        opacity: 0.5,
-        filter: 'alpha(opacity=40)',
+        // opacity: 0.5,
+        // filter: 'alpha(opacity=40)',
         // paddingBottom: '70px',
         paddingTop: '120px'
     },
@@ -318,7 +323,7 @@ const styles = {
         marginBottom: '20px',
         color: theme.colors.primary,
         fontFamily : 'Work Sans,sans-serif',
-        fontWeight : 600
+        fontWeight : 800
     }
 }
 export default Body

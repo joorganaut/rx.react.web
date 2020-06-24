@@ -174,7 +174,7 @@ componentDidMount(){
   
       const { collapseID } = this.state;
         return(<>
-           <MDBNavbar className='bgcolor pills' color='dark' dark expand='md' fixed='top' scrolling >
+           <MDBNavbar className='bgcolor pills' color='dark' dark expand='lg' fixed='top' scrolling >
             <MDBNavbarBrand href='/' style={{borderRadius : 100}}>
               {/* <Logo style={{ height: '2.5rem', width: '2.5rem' }} /> */}
               
@@ -252,13 +252,26 @@ componentDidMount(){
                     onClick={()=>{this.closeCollapse('mainNavbarCollapse');}}
                     to='#/'
                   >
-                   <strong className='cart-overlay-trigger' style={{fontSize : 25, color : theme.colors.white}}>
+                   <strong className='cart-overlay-trigger' style={{fontSize : 25, color : theme.colors.cell}}>
                    <MDBIcon icon="cart-arrow-down" 
                    onClick={()=> this.setState({Show : true})}                     
                    /></strong>
                    <span class="badge badge-pill red" style={style.super}>{value.state.CartItemsCount}</span>
                   </MDBNavLink>
-                </MDBNavItem>   </>)}</AppContext.Consumer>
+                </MDBNavItem> 
+                <MDBNavItem>
+                  <MDBNavLink
+                    onClick={()=>{this.closeCollapse('mainNavbarCollapse');}}
+                    to='#/'
+                  >
+                   <strong className='cart-overlay-trigger' style={{fontSize : 25, color : theme.colors.cell}}>
+                   <MDBIcon icon="heart" 
+                   onClick={()=> this.setState({Show : true})}                     
+                   /></strong>
+                   <span class="badge badge-pill red" style={style.super}>{value.state.CartItemsCount}</span>
+                  </MDBNavLink>
+                </MDBNavItem> 
+                  </>)}</AppContext.Consumer>
             <MDBNavItem>
               <MDBFormInline waves>
                 <form className="md-form my-0" action='/store'>
