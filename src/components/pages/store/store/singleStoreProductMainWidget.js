@@ -28,7 +28,7 @@ class SingleStoreProductMainWidget extends BasePageComponent{
           Quantity = {this.state.Item.Quantity}
           IsPrescription = {this.state.Item.IsPrescription}
           Brand={this.state.Item.Brand}
-          Unit={this.state.Item.Unit}
+          Unit={this.state.Item.ContainerUnit}
           DiscountedPrice = {this.state.Item.DiscountPrice}
           Discounted = {this.state.Item.Discounted}
           modalVisible={this.state.Show} 
