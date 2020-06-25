@@ -3,6 +3,7 @@ import BasePageComponent from '../../common/basePageComponent';
 import {theme} from '../../common/theme';
 import ContainerUnit from '../../common/containerUnit';
 import CartButton from '../store/cart/cartButton';
+import ReadMoreReact from 'read-more-react';
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 class ProductDetails extends BasePageComponent{
     constructor(props){
@@ -68,9 +69,12 @@ class ProductDetails extends BasePageComponent{
                         <div className="row">
                             <div className="col-4 text-left strong"><strong>Description:</strong></div>
                             <p><div className="col text-justify text-wrap">
-                            {
+                            <ReadMoreReact style={{color : 'red'}} 
+                            readMoreText={'...read more'}
+                            text={this.state.Description !== undefined ? this.state.Description : ''}/>
+                            {/* {
                         this.state.Description !== undefined ? this.state.Description : ''
-                        }
+                        } */}
                                 </div></p>
                         </div>
                         {/* <div className="row">
