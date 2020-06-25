@@ -51,9 +51,10 @@ class Footer extends Component
                             
                             Copyright &copy;
                             {new Date().getFullYear()} | All rights reserved 
-                            {/* | Powered
-                            by <a href="https://joorganautia.com" target="_blank"
-                                  className="text-primary">Joorganautia&reg;</a> */}
+                            | Powered
+                            by Joorganautia&reg;
+                            {/* <a href="/#" target="self"
+                                  className="text-primary"></a> */}
                         </p>
                     </div>
 
