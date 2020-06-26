@@ -4,6 +4,7 @@ import ProductDetails from '../../product/productDetails';
 import {theme} from '../../../common/theme';
 // import './sidebar.css';
 // import './sidebar2.css';
+import ReadMoreReact from 'read-more-react';
 import NoImage from '../../../common/Pharmacy/images/No_Image_Available.jpg';
 class SingleStoreProductMainWidget extends BasePageComponent{
     constructor(props){
@@ -155,8 +156,15 @@ class SingleStoreProductMainWidget extends BasePageComponent{
             <h3><a href="#/">{this.state.Item.Name}</a></h3>
          </div>
          <div class="price">{this.renderPrice(this.state.Item)}</div>
-         <div class="short-description text-justify text-wrap">{this.state.Item.Description}</div>
-         <div class="add-to-cart"><button style={{backgroundColor : theme.colors.brand, border : 'none'}} onClick={()=>{this.setState({Show : !this.state.Show})}} class="lezada-button lezada-button--medium">Add to cart</button></div>
+         <div class="short-description text-justify text-wrap">
+         <ReadMoreReact style={{color : 'red'}} 
+                            readMoreText={'...read more'}
+                            text={this.state.Item.Description !== undefined ? this.state.Item.Description : ''}/>
+         {/* {this.state.Item.Description} */}
+         </div>
+         <div class="add-to-cart"><button style={{backgroundColor : theme.colors.brand, border : 'none'}} 
+         onClick={()=>{this.setState({Show : !this.state.Show})}} 
+         class="lezada-button lezada-button--medium">Add to cart</button></div>
       </div>
    </div>
 
